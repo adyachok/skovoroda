@@ -41,21 +41,26 @@ class Word: Decodable {
 
 
 extension WordsDictionary {
-    public static func loadFixtures() -> WordsDictionary? {
-        if let path = Bundle.main.path(forResource: "szotar", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let decoder = JSONDecoder()
-                let hu_dict = WordsDictionary(name: "Petra's szotar", description: "Some description", language: .English)
-                hu_dict.words = try decoder.decode([Word].self, from: data)
-                return hu_dict
-              } catch {
-                   // handle error
-                print("Error occured! \(error.localizedDescription)")
-              }
+    public static func loadFixtures() -> [WordsDictionary] {
+        var dictionaries: [WordsDictionary] = []
+        let urls = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: "fixtures")
+        if let urls = urls, urls.count > 0 {
+            for url in urls {
+                do {
+                    let data = try Data(contentsOf: url, options: .mappedIfSafe)
+                    let decoder = JSONDecoder()
+                    let dict = WordsDictionary(name: "Petra's szotar", description: "Some description", language: .Hungarian)
+                    dict.words = try decoder.decode([Word].self, from: data)
+                    dictionaries.append(dict)
+                } catch {
+                     // handle error
+                  print("Error occured! \(error.localizedDescription)")
+                }
+            }
+            
         } else {
             print("No file found!")
         }
-        return nil
+        return dictionaries
     }
 }
