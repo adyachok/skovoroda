@@ -8,20 +8,23 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class DictionaryWordsViewController: UITableViewController, WordsDictionaryContainer {
     
-    var wordsDictionary: [WordsDictionary]?
+    
+    var wordsDictionary: WordsDictionary?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        wordsDictionary = WordsDictionary.loadFixtures()
+        self.title = wordsDictionary?.name
+        navigationController?.navigationBar.prefersLargeTitles = true
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // TODO: Introduce sections or dict selection
-        if let wordsDictionary = wordsDictionary, wordsDictionary.count > 0 {
-            return wordsDictionary[0].words.count
+        if let wordsDictionary = wordsDictionary {
+            return wordsDictionary.words.count
         }
         return 0
     }
@@ -30,8 +33,8 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dictionaryCell", for: indexPath)
         // TODO: Introduce sections or dict selection
-        if let wordsDictionary = wordsDictionary, wordsDictionary.count > 0 {
-            let word = wordsDictionary[0].words[indexPath.row]
+        if let wordsDictionary = wordsDictionary {
+            let word = wordsDictionary.words[indexPath.row]
             let foreignWordLabel = cell.viewWithTag(1001) as? UILabel
             let transcriptLabel = cell.viewWithTag(1002) as? UILabel
             let translationLabel = cell.viewWithTag(1003) as? UILabel

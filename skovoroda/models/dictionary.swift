@@ -9,21 +9,33 @@
 import Foundation
 
 
-enum Language: String {
+enum Language: String, Decodable {
     case English, Hungarian, German
 }
 
 
-class WordsDictionary {
+class WordsDictionary: Decodable {
     let name: String
     let description: String
     var words: [Word] = []
     let language: Language
+    var dateCreated: String
+    var dateUpdated: String?
     
-    init(name: String, description: String, language: Language) {
+    init(name: String, description: String, language: Language, dateCreated: String?, dateUpdated: String?) {
         self.name = name
         self.description = description
         self.language = language
+        if let dateCreated = dateCreated {
+            self.dateCreated = dateCreated
+        } else {
+            self.dateCreated = getTimeNow()
+        }
+        if let dateUpdated = dateUpdated {
+            self.dateUpdated = dateUpdated
+        } else {
+            self.dateUpdated = self.dateCreated
+        }
     }
 }
 
@@ -49,8 +61,7 @@ extension WordsDictionary {
                 do {
                     let data = try Data(contentsOf: url, options: .mappedIfSafe)
                     let decoder = JSONDecoder()
-                    let dict = WordsDictionary(name: "Petra's szotar", description: "Some description", language: .Hungarian)
-                    dict.words = try decoder.decode([Word].self, from: data)
+                    let dict = try decoder.decode(WordsDictionary.self, from: data)
                     dictionaries.append(dict)
                 } catch {
                      // handle error
@@ -63,4 +74,11 @@ extension WordsDictionary {
         }
         return dictionaries
     }
+}
+
+
+func getTimeNow() -> String {
+    let df = DateFormatter()
+    df.dateFormat = "dd-MM-yyyy hh:mm:ss"
+    return  df.string(from: Date())
 }

@@ -1,4 +1,9 @@
-[
+{
+    "name": "Petra's dict 2",
+    "description": "Useful Hungarian words",
+    "language": "Hungarian",
+    "dateCreated": "28-05-2020 15:15",
+    "words": [
  {
    "foreignWord": "heti terv",
    "translation": "weekly plan"
@@ -60,3 +65,4 @@
    "translation": "taxes are low"
  }
 ]
+}
