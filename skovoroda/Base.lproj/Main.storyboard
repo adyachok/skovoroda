@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="dictionaryCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="dictionaryCell" rowHeight="295" id="zRD-ZZ-vRW">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="dictionaryCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="dictionaryCell" rowHeight="295" id="zRD-ZZ-vRW" customClass="DictionaryCell" customModule="skovoroda" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="295"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zRD-ZZ-vRW" id="erT-db-q06">
@@ -60,6 +60,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateCreated" destination="5Fe-ei-0Iu" id="DaY-sb-g60"/>
+                                    <outlet property="desc" destination="YsY-kV-r1C" id="Zwk-sl-xXm"/>
+                                    <outlet property="dictionary" destination="igW-xC-gEd" id="jsK-rn-yqX"/>
+                                    <outlet property="flag" destination="j0X-tQ-kbV" id="i74-5I-IcH"/>
                                     <segue destination="D4v-Af-Elt" kind="show" identifier="showDictWordsSegue" trigger="accessoryAction" id="xix-ay-xKY"/>
                                 </connections>
                             </tableViewCell>
@@ -84,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="dictionaryCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dictionaryCell" rowHeight="200" id="kzi-PP-a5d">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="dictionaryCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dictionaryCell" rowHeight="200" id="kzi-PP-a5d" customClass="WordCell" customModule="skovoroda" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kzi-PP-a5d" id="8dQ-pN-hcN">
@@ -130,6 +134,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="0.17546018835616439" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="foreignWord" destination="ZgK-6M-tsO" id="lKI-Ak-UA7"/>
+                                    <outlet property="transcript" destination="LLb-vN-Y2B" id="04k-7q-FQf"/>
+                                    <outlet property="translation" destination="F5i-Lk-N6W" id="mjs-8m-fUO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

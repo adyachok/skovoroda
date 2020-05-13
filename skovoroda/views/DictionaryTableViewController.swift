@@ -32,20 +32,16 @@ class DictionaryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dictionaryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dictionaryCell", for: indexPath) as! DictionaryCell
         guard let wordsDictionaries = wordsDictionaries, wordsDictionaries.count > 0 else {
             return cell
         }
         
-        let dictionaryName = cell.viewWithTag(1001) as? UILabel
-        let dictionaryLanguage = cell.viewWithTag(1002) as? UIImageView
-        let dictionaryDescription = cell.viewWithTag(1003) as? UILabel
-        let dateCreated = cell.viewWithTag(1004) as? UILabel
         let selectedDictionary = wordsDictionaries[indexPath.row]
-        dictionaryName?.text = selectedDictionary.name
-        dictionaryLanguage?.image = getDictionaryFlag(language: selectedDictionary.language)
-        dictionaryDescription?.text = selectedDictionary.description
-        dateCreated?.text = selectedDictionary.dateCreated
+        cell.dictionary.text = selectedDictionary.name
+        cell.flag.image = getDictionaryFlag(language: selectedDictionary.language)
+        cell.desc.text = selectedDictionary.description
+        cell.dateCreated.text = selectedDictionary.dateCreated
         return cell
     }
     

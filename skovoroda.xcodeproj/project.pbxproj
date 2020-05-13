@@ -17,6 +17,8 @@
 		013C909C245C83EC009264D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C909A245C83EC009264D9 /* LaunchScreen.storyboard */; };
 		013C90A5245C842E009264D9 /* dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C90A4245C842E009264D9 /* dictionary.swift */; };
 		013C90AF245CD7CA009264D9 /* fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 013C90AE245CD7CA009264D9 /* fixtures */; };
+		01488757246C5092007684BC /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01488756246C5092007684BC /* WordCell.swift */; };
+		01488759246C5409007684BC /* DictionaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01488758246C5409007684BC /* DictionaryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		013C909D245C83EC009264D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013C90A4245C842E009264D9 /* dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dictionary.swift; sourceTree = "<group>"; };
 		013C90AE245CD7CA009264D9 /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fixtures; sourceTree = "<group>"; };
+		01488756246C5092007684BC /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
+		01488758246C5409007684BC /* DictionaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 			children = (
 				013C9093245C83EA009264D9 /* DictionaryWordsViewController.swift */,
 				0138881A245D970E00D7C685 /* DictionaryTableViewController.swift */,
+				01488756246C5092007684BC /* WordCell.swift */,
+				01488758246C5409007684BC /* DictionaryCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -168,9 +174,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				013C9094245C83EA009264D9 /* DictionaryWordsViewController.swift in Sources */,
+				01488757246C5092007684BC /* WordCell.swift in Sources */,
 				013C90A5245C842E009264D9 /* dictionary.swift in Sources */,
 				013C9090245C83EA009264D9 /* AppDelegate.swift in Sources */,
 				01388822245DB11B00D7C685 /* protocols.swift in Sources */,
+				01488759246C5409007684BC /* DictionaryCell.swift in Sources */,
 				0138881B245D970E00D7C685 /* DictionaryTableViewController.swift in Sources */,
 				013C9092245C83EA009264D9 /* SceneDelegate.swift in Sources */,
 			);
