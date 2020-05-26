@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0138881B245D970E00D7C685 /* DictionaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0138881A245D970E00D7C685 /* DictionaryTableViewController.swift */; };
+		01087A03247D045300F79E7C /* importers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01087A02247D045300F79E7C /* importers.swift */; };
+		01087A05247D054300F79E7C /* tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01087A04247D054300F79E7C /* tools.swift */; };
+		01087A07247D065400F79E7C /* language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01087A06247D065400F79E7C /* language.swift */; };
+		01087A0A247D114800F79E7C /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01087A09247D114800F79E7C /* config.swift */; };
+		0138881B245D970E00D7C685 /* DictionaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0138881A245D970E00D7C685 /* DictionaryVC.swift */; };
 		01388822245DB11B00D7C685 /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01388821245DB11B00D7C685 /* protocols.swift */; };
 		013C9090245C83EA009264D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C908F245C83EA009264D9 /* AppDelegate.swift */; };
 		013C9092245C83EA009264D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C9091245C83EA009264D9 /* SceneDelegate.swift */; };
-		013C9094245C83EA009264D9 /* DictionaryWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C9093245C83EA009264D9 /* DictionaryWordsViewController.swift */; };
+		013C9094245C83EA009264D9 /* WordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C9093245C83EA009264D9 /* WordsVC.swift */; };
 		013C9097245C83EA009264D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C9095245C83EA009264D9 /* Main.storyboard */; };
 		013C9099245C83EC009264D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013C9098245C83EC009264D9 /* Assets.xcassets */; };
 		013C909C245C83EC009264D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C909A245C83EC009264D9 /* LaunchScreen.storyboard */; };
@@ -19,15 +23,20 @@
 		013C90AF245CD7CA009264D9 /* fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 013C90AE245CD7CA009264D9 /* fixtures */; };
 		01488757246C5092007684BC /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01488756246C5092007684BC /* WordCell.swift */; };
 		01488759246C5409007684BC /* DictionaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01488758246C5409007684BC /* DictionaryCell.swift */; };
+		75C73DED8D374CA93A57B220 /* Pods_skovoroda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B439A8890D69EEBB230F047 /* Pods_skovoroda.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0138881A245D970E00D7C685 /* DictionaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTableViewController.swift; sourceTree = "<group>"; };
+		01087A02247D045300F79E7C /* importers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = importers.swift; sourceTree = "<group>"; };
+		01087A04247D054300F79E7C /* tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tools.swift; sourceTree = "<group>"; };
+		01087A06247D065400F79E7C /* language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = language.swift; sourceTree = "<group>"; };
+		01087A09247D114800F79E7C /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		0138881A245D970E00D7C685 /* DictionaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryVC.swift; sourceTree = "<group>"; };
 		01388821245DB11B00D7C685 /* protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
 		013C908C245C83EA009264D9 /* skovoroda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skovoroda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013C908F245C83EA009264D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		013C9091245C83EA009264D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		013C9093245C83EA009264D9 /* DictionaryWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryWordsViewController.swift; sourceTree = "<group>"; };
+		013C9093245C83EA009264D9 /* WordsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsVC.swift; sourceTree = "<group>"; };
 		013C9096245C83EA009264D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		013C9098245C83EC009264D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		013C909B245C83EC009264D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +45,9 @@
 		013C90AE245CD7CA009264D9 /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fixtures; sourceTree = "<group>"; };
 		01488756246C5092007684BC /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		01488758246C5409007684BC /* DictionaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryCell.swift; sourceTree = "<group>"; };
+		1B439A8890D69EEBB230F047 /* Pods_skovoroda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_skovoroda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BA3DD126B4C8C6D5C961352 /* Pods-skovoroda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skovoroda.release.xcconfig"; path = "Target Support Files/Pods-skovoroda/Pods-skovoroda.release.xcconfig"; sourceTree = "<group>"; };
+		A2C4598EA198791779F74980 /* Pods-skovoroda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skovoroda.debug.xcconfig"; path = "Target Support Files/Pods-skovoroda/Pods-skovoroda.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +55,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C73DED8D374CA93A57B220 /* Pods_skovoroda.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01087A08247D076A00F79E7C /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				01087A02247D045300F79E7C /* importers.swift */,
+				01087A04247D054300F79E7C /* tools.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		0138881D245DA36200D7C685 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				013C9093245C83EA009264D9 /* DictionaryWordsViewController.swift */,
-				0138881A245D970E00D7C685 /* DictionaryTableViewController.swift */,
+				013C9093245C83EA009264D9 /* WordsVC.swift */,
+				0138881A245D970E00D7C685 /* DictionaryVC.swift */,
 				01488756246C5092007684BC /* WordCell.swift */,
 				01488758246C5409007684BC /* DictionaryCell.swift */,
 			);
@@ -65,6 +87,8 @@
 			children = (
 				013C908E245C83EA009264D9 /* skovoroda */,
 				013C908D245C83EA009264D9 /* Products */,
+				1032B300E851AAB12101F0AC /* Pods */,
+				F389BDBB9FE772C94F815DF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +112,8 @@
 				013C9098245C83EC009264D9 /* Assets.xcassets */,
 				013C909A245C83EC009264D9 /* LaunchScreen.storyboard */,
 				013C909D245C83EC009264D9 /* Info.plist */,
+				01087A08247D076A00F79E7C /* utils */,
+				01087A09247D114800F79E7C /* config.swift */,
 			);
 			path = skovoroda;
 			sourceTree = "<group>";
@@ -97,8 +123,26 @@
 			children = (
 				013C90A4245C842E009264D9 /* dictionary.swift */,
 				01388821245DB11B00D7C685 /* protocols.swift */,
+				01087A06247D065400F79E7C /* language.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		1032B300E851AAB12101F0AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2C4598EA198791779F74980 /* Pods-skovoroda.debug.xcconfig */,
+				6BA3DD126B4C8C6D5C961352 /* Pods-skovoroda.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F389BDBB9FE772C94F815DF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B439A8890D69EEBB230F047 /* Pods_skovoroda.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +152,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 013C90A0245C83EC009264D9 /* Build configuration list for PBXNativeTarget "skovoroda" */;
 			buildPhases = (
+				80FD8F4D0535F561A0B32B57 /* [CP] Check Pods Manifest.lock */,
 				013C9088245C83EA009264D9 /* Sources */,
 				013C9089245C83EA009264D9 /* Frameworks */,
 				013C908A245C83EA009264D9 /* Resources */,
@@ -168,19 +213,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		80FD8F4D0535F561A0B32B57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-skovoroda-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		013C9088245C83EA009264D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				013C9094245C83EA009264D9 /* DictionaryWordsViewController.swift in Sources */,
+				013C9094245C83EA009264D9 /* WordsVC.swift in Sources */,
+				01087A07247D065400F79E7C /* language.swift in Sources */,
 				01488757246C5092007684BC /* WordCell.swift in Sources */,
 				013C90A5245C842E009264D9 /* dictionary.swift in Sources */,
+				01087A05247D054300F79E7C /* tools.swift in Sources */,
 				013C9090245C83EA009264D9 /* AppDelegate.swift in Sources */,
 				01388822245DB11B00D7C685 /* protocols.swift in Sources */,
 				01488759246C5409007684BC /* DictionaryCell.swift in Sources */,
-				0138881B245D970E00D7C685 /* DictionaryTableViewController.swift in Sources */,
+				0138881B245D970E00D7C685 /* DictionaryVC.swift in Sources */,
+				01087A0A247D114800F79E7C /* config.swift in Sources */,
 				013C9092245C83EA009264D9 /* SceneDelegate.swift in Sources */,
+				01087A03247D045300F79E7C /* importers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +396,7 @@
 		};
 		013C90A1245C83EC009264D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2C4598EA198791779F74980 /* Pods-skovoroda.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -340,6 +415,7 @@
 		};
 		013C90A2245C83EC009264D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BA3DD126B4C8C6D5C961352 /* Pods-skovoroda.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

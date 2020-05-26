@@ -9,12 +9,7 @@
 import Foundation
 
 
-enum Language: String, Decodable {
-    case English, Hungarian, German
-}
-
-
-class WordsDictionary: Decodable {
+class WordsDictionary {
     let name: String
     let description: String
     var words: [Word] = []
@@ -22,63 +17,46 @@ class WordsDictionary: Decodable {
     var dateCreated: String
     var dateUpdated: String?
     
-    init(name: String, description: String, language: Language, dateCreated: String?, dateUpdated: String?) {
+    init(name: String, description: String, language: Language) {
         self.name = name
         self.description = description
         self.language = language
-        if let dateCreated = dateCreated {
-            self.dateCreated = dateCreated
-        } else {
-            self.dateCreated = getTimeNow()
-        }
-        if let dateUpdated = dateUpdated {
-            self.dateUpdated = dateUpdated
-        } else {
-            self.dateUpdated = self.dateCreated
-        }
+        self.dateCreated = getTimeNow()
+        self.dateUpdated = getTimeNow()
     }
+    
+    func getLearnedWordsCount() -> Int {
+        return words.filter{$0.status.state == .learned}.count
+    }
+    
 }
 
 
-class Word: Decodable {
+class Word {
     var foreignWord: String
-    var tanscript: String?
+    var transcript: String?
     var translation: String
+    var status: MemoizationStatus
     
-    init(foreignWord: String, translation: String) {
+    init(foreignWord: String, translation: String, status: MemoizationStatus = MemoizationStatus()) {
         self.foreignWord = foreignWord
         self.translation = translation
+        self.status = status
     }
 }
 
 
-extension WordsDictionary {
-    public static func loadFixtures() -> [WordsDictionary] {
-        var dictionaries: [WordsDictionary] = []
-        let urls = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: "fixtures")
-        if let urls = urls, urls.count > 0 {
-            for url in urls {
-                do {
-                    let data = try Data(contentsOf: url, options: .mappedIfSafe)
-                    let decoder = JSONDecoder()
-                    let dict = try decoder.decode(WordsDictionary.self, from: data)
-                    dictionaries.append(dict)
-                } catch {
-                     // handle error
-                  print("Error occured! \(error.localizedDescription)")
-                }
-            }
-            
-        } else {
-            print("No file found!")
-        }
-        return dictionaries
+class MemoizationStatus {
+    enum State: String {
+        case readyForLearning, inLearning, learned, needsRenew
+    }
+    
+    var state: State
+    var date: Double
+    
+    init(state: State = .readyForLearning) {
+        self.state = state
+        self.date = Date().timeIntervalSince1970
     }
 }
 
-
-func getTimeNow() -> String {
-    let df = DateFormatter()
-    df.dateFormat = "dd-MM-yyyy hh:mm:ss"
-    return  df.string(from: Date())
-}
