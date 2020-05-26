@@ -1,0 +1,6 @@
+framework module Pods_skovoroda {
+  umbrella header "Pods-skovoroda-umbrella.h"
+
+  export *
+  module * { export * }
+}

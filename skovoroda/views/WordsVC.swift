@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 
 class WordsVC: UIViewController, WordsDictionaryContainer {
@@ -35,9 +36,7 @@ class WordsVC: UIViewController, WordsDictionaryContainer {
 
 extension WordsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: Introduce sections or dict selection
         if let wordsDictionary = wordsDictionary {
-            print(wordsDictionary.words.count)
             return wordsDictionary.words.count
         }
         return 0
@@ -46,13 +45,12 @@ extension WordsVC: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dictionaryCell", for: indexPath) as! WordCell
-        // TODO: Introduce sections or dict selection
         if let wordsDictionary = wordsDictionary {
             let word = wordsDictionary.words[indexPath.row]
             cell.foreignWord.text = word.foreignWord
             cell.transcript.text = word.transcript ?? ""
             cell.translation.text = word.translation
-            if word.status.state == .learned {
+            if let status = word.status, status.state == .learned {
                 cell.backgroundColor = K.learnedWordColor
             } else {
                 cell.backgroundColor = K.readyForLearningColor
@@ -71,8 +69,11 @@ extension WordsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let wordsDictionary = wordsDictionary {
             let word = wordsDictionary.words[indexPath.row]
-            if word.status.state == .readyForLearning {
-                word.status = MemoizationStatus(state: .learned)
+            if let status = word.status, status.state == .readyForLearning {
+                let realm = try! Realm()
+                try! realm.write {
+                    word.status = MemoizationStatus(state: .learned)
+                }
                 setProgress()
             }
         }

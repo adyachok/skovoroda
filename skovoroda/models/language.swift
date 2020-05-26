@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
 
-
-enum Language: String, Decodable {
+enum Language: String, Codable {
     case English, Hungarian, German
 }
 
