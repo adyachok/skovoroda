@@ -46,6 +46,7 @@ class WordsDictionary: Object {
 
 class Word: Object{
     @objc dynamic var foreignWord: String = ""
+    @objc dynamic var partOfSpeech: String = ""
     var translations = List<Translation>()
     // SOLUTION FOUND https://santoshm.com.np/2019/11/19/swift-didset-and-willset-on-properties-in-realm-doesnt-work/
     @objc private dynamic var _status: MemoizationStatus?
@@ -56,15 +57,15 @@ class Word: Object{
                 self.learningStatistics.append(value)
             }
             _status = newValue
-            print("Triggered!")
         }
     }        
     var learningStatistics = List<MemoizationStatus>()
     
-    convenience init(foreignWord: String, status: MemoizationStatus = MemoizationStatus()) {
+    convenience init(foreignWord: String, partOfSpeech:String = "", status: MemoizationStatus = MemoizationStatus()) {
         self.init()
         self.foreignWord = foreignWord
         self.status = status
+        self.partOfSpeech = partOfSpeech
     }
 }
 

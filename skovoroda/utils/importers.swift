@@ -26,6 +26,7 @@ class WordsDictionaryFixture: Decodable {
 
 class WordFixture: Decodable {
     var foreignWord: String
+    var partOfSpeech: String?
     
     var translations: [TranslationFixture] = []
     var learned: Bool? = false

@@ -48,20 +48,35 @@ extension WordsVC: UITableViewDataSource {
         if let wordsDictionary = wordsDictionary {
             let word = wordsDictionary.words[indexPath.row]
             cell.foreignWord.text = word.foreignWord
-            cell.translations = word.translations
+            cell.translation.text = self.prepareTranslation(word.translations)
+            if word.partOfSpeech != "" {
+                cell.partOfSpeech.text = word.partOfSpeech
+            } else {
+                cell.partOfSpeech.text = ""
+            }
             if let status = word.status, status.state == .learned {
                 cell.backgroundColor = K.learnedWordColor
-                cell.translationTable.backgroundColor = K.learnedWordColor
             } else {
-                cell.backgroundColor = K.readyForLearningColor
-                cell.translationTable.backgroundColor = K.readyForLearningColor
+                cell.backgroundColor = UIColor(named: "ApplicationBackgroundColor")
             }
         }
-        cell.layoutSubviews()
-
-        cell.layoutIfNeeded()
         
         return cell
+    }
+    
+    func prepareTranslation(_ translations: List<Translation>) -> String {
+        var translationStrings:[String] = []
+        for wordTranslation in translations {
+            var translationString = ""
+            if wordTranslation.transcript.count != 0 {
+                for transcript in wordTranslation.transcript {
+                    translationString += "[\(transcript)]\n"
+                }
+            }
+            translationString += "\n\t\(wordTranslation.translation)\n\n"
+            translationStrings.append(translationString)
+        }
+        return translationStrings.joined(separator: "")
     }
 }
 

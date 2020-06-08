@@ -82,6 +82,9 @@ extension DictionaryVC {
                 let newWords = List<Word>()
                 for word in dictionary.words {
                     let newWord = Word(foreignWord: word.foreignWord)
+                    if let partOfSpeech = word.partOfSpeech {
+                        newWord.partOfSpeech = partOfSpeech
+                    }
                     for translation in word.translations {
                         
                         let wordTranslation = Translation(translation: translation.translation)

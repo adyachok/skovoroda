@@ -23,7 +23,6 @@
 		013C90AF245CD7CA009264D9 /* fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 013C90AE245CD7CA009264D9 /* fixtures */; };
 		01488757246C5092007684BC /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01488756246C5092007684BC /* WordCell.swift */; };
 		01488759246C5409007684BC /* DictionaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01488758246C5409007684BC /* DictionaryCell.swift */; };
-		01CCE8AF248E732300C1B416 /* TranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CCE8AE248E732300C1B416 /* TranslationCell.swift */; };
 		75C73DED8D374CA93A57B220 /* Pods_skovoroda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B439A8890D69EEBB230F047 /* Pods_skovoroda.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +45,6 @@
 		013C90AE245CD7CA009264D9 /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fixtures; sourceTree = "<group>"; };
 		01488756246C5092007684BC /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		01488758246C5409007684BC /* DictionaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryCell.swift; sourceTree = "<group>"; };
-		01CCE8AE248E732300C1B416 /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
 		1B439A8890D69EEBB230F047 /* Pods_skovoroda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_skovoroda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA3DD126B4C8C6D5C961352 /* Pods-skovoroda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skovoroda.release.xcconfig"; path = "Target Support Files/Pods-skovoroda/Pods-skovoroda.release.xcconfig"; sourceTree = "<group>"; };
 		A2C4598EA198791779F74980 /* Pods-skovoroda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skovoroda.debug.xcconfig"; path = "Target Support Files/Pods-skovoroda/Pods-skovoroda.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				0138881A245D970E00D7C685 /* DictionaryVC.swift */,
 				01488756246C5092007684BC /* WordCell.swift */,
 				01488758246C5409007684BC /* DictionaryCell.swift */,
-				01CCE8AE248E732300C1B416 /* TranslationCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -275,7 +272,6 @@
 				0138881B245D970E00D7C685 /* DictionaryVC.swift in Sources */,
 				01087A0A247D114800F79E7C /* config.swift in Sources */,
 				013C9092245C83EA009264D9 /* SceneDelegate.swift in Sources */,
-				01CCE8AF248E732300C1B416 /* TranslationCell.swift in Sources */,
 				01087A03247D045300F79E7C /* importers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
