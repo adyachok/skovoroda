@@ -1,68 +1,143 @@
 {
-    "name": "Petra's dict 2",
+    "name": "Petra 2",
     "description": "Useful Hungarian words",
     "language": "Hungarian",
     "dateCreated": "28-05-2020 15:15",
     "words": [
- {
-   "foreignWord": "heti terv",
-   "translation": "weekly plan"
- },
- {
-   "foreignWord": "tanulnak a gyerekekkel",
-   "translation": "they learn with the kids"
- },
- {
-   "foreignWord": "heti tervet küldenek",
-   "translation": "they send weekly plan"
- },
- {
-   "foreignWord": "érettségi vizsga",
-   "translation": "school-leaving exam"
- },
- {
-   "foreignWord": "mozog",
-   "translation": "to move"
- },
- {
-   "foreignWord": "érzelem",
-   "translation": "emotion"
- },
- {
-   "foreignWord": "félnek a járványtól",
-   "translation": "they are afraid of the epidemic"
- },
- {
-   "foreignWord": "az emberek nagy többsége",
-   "translation": "the great majority of the people"
- },
- {
-   "foreignWord": "útlevelet igényelni",
-   "translation": "to apply for passport"
- },
- {
-   "foreignWord": "felirat",
-   "translation": "subtitles"
- },
- {
-   "foreignWord": "szén",
-   "translation": "coal"
- },
- {
-   "foreignWord": "szénbányában dolgoznak",
-   "translation": "they work in a coal-mine"
- },
- {
-   "foreignWord": "nagyon szereti a történelmet",
-   "translation": "loves history very much"
- },
- {
-   "foreignWord": "Magyarországtól sok területet elcsatoltak",
-   "translation": "a lot of territories were cut off from Hungary"
- },
- {
-   "foreignWord": "alacsonyak az adók",
-   "translation": "taxes are low"
- }
-]
+        {
+            "foreignWord": "heti terv",
+            "translations": [
+                {
+                    "translation": "weekly plan",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "tanulnak a gyerekekkel",
+            "translations": [
+                {
+                    "translation": "they learn with the kids",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "heti tervet küldenek",
+            "translations": [
+                {
+                    "translation": "they send weekly plan",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "érettségi vizsga",
+            "translations": [
+                {
+                    "translation": "school-leaving exam",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "mozog",
+            "translations": [
+                {
+                    "translation": "to move",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "érzelem",
+            "translations": [
+                {
+                    "translation": "emotion",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "félnek a járványtól",
+            "translations": [
+                {
+                    "translation": "they are afraid of the epidemic",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "az emberek nagy többsége",
+            "translations": [
+                {
+                    "translation": "the great majority of the people",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "útlevelet igényelni",
+            "translations": [
+                {
+                    "translation": "to apply for passport",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "felirat",
+            "translations": [
+                {
+                    "translation": "subtitles",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "szén",
+            "translations": [
+                {
+                    "translation": "coal",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "szénbányában dolgoznak",
+            "translations": [
+                {
+                    "translation": "they work in a coal-mine",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "nagyon szereti a történelmet",
+            "translations": [
+                {
+                    "translation": "loves history very much",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "Magyarországtól sok területet elcsatoltak",
+            "translations": [
+                {
+                    "translation": "a lot of territories were cut off from Hungary",
+                    "transcript": []
+                }
+            ]
+        },
+        {
+            "foreignWord": "alacsonyak az adók",
+            "translations": [
+                {
+                    "translation": "taxes are low",
+                    "transcript": []
+                }
+            ]
+        }
+    ]
 }

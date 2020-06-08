@@ -1,221 +1,203 @@
 {
-    "name": "Petra 1",
+    "name": "Petra 3",
     "description": "Useful Hungarian words",
     "language": "Hungarian",
-    "dateCreated": "20-05-2020 14:15",
+    "dateCreated": "19-05-2020 14:15",
     "words": [
         {
-            "foreignWord": "május 3-tól (harmadikától)",
+            "foreignWord": "dombok",
             "translations": [
                 {
-                    "translation": "from the 3rd of May",
+                    "translation": "hills",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "Nyitva lesznek az éttermek?",
+            "foreignWord": "épületek a tizenharmadik századból",
             "translations": [
                 {
-                    "translation": "Will the restaurant be open?",
+                    "translation": "buildings from the 13th century",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "általános iskola",
+            "foreignWord": "sírkő",
             "translations": [
                 {
-                    "translation": "elementary school",
+                    "translation": "tomb",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "az idősebb gyerekek",
+            "foreignWord": "lovag",
             "translations": [
                 {
-                    "translation": "the older kids",
+                    "translation": "knight",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "megismer ",
+            "foreignWord": "bicikliút",
             "translations": [
                 {
-                    "translation": "to get to know",
+                    "translation": "cycle path",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "hosszú ideig tanulok",
+            "foreignWord": "kemping",
             "translations": [
                 {
-                    "translation": "I learn for a long time",
+                    "translation": "campsite",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "már ismerem egy kicsit",
+            "foreignWord": "kempingező",
             "translations": [
                 {
-                    "translation": "I already know it a bit",
+                    "translation": "camper",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "büntetés",
+            "foreignWord": "tavaly nyáron / múlt nyáron",
             "translations": [
                 {
-                    "translation": "fine",
+                    "translation": "last summer",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "a rendőrség elkap egy embert",
+            "foreignWord": "komp",
             "translations": [
                 {
-                    "translation": "when the police catch a person",
+                    "translation": "ferry",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "az engedélyt törlik",
+            "foreignWord": "munkalehetőség",
             "translations": [
                 {
-                    "translation": "they cancel the permission",
+                    "translation": "job opportunity",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "Putyin azt szeretné, hogy újraválasszák.",
+            "foreignWord": "nehéz híreket hallgatni",
             "translations": [
                 {
-                    "translation": "P wants to be re-elected.",
+                    "translation": "it’s hard to listen to the news",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "nagyon fél",
+            "foreignWord": "lazac",
             "translations": [
                 {
-                    "translation": "is afraid very much",
+                    "translation": "salmon",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "várhattatok volna",
+            "foreignWord": "horgászik",
             "translations": [
                 {
-                    "translation": "you could have waited (for me)",
+                    "translation": "to fish",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "erős egyéniség",
+            "foreignWord": "gyárt",
             "translations": [
                 {
-                    "translation": "strong character",
+                    "translation": "to produce",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "az emberek bal oldaliak",
+            "foreignWord": "tehetséges",
             "translations": [
                 {
-                    "translation": "people are on the left side (pol.)",
+                    "translation": "talented, gifted",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "bevándorló",
+            "foreignWord": "vannak különbségek a tanulási módok között",
             "translations": [
                 {
-                    "translation": "migrant",
+                    "translation": "there are differences between learning methods",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "nem ér annyit, mint a papír, amire írták",
+            "foreignWord": "jó a memóriájuk",
             "translations": [
                 {
-                    "translation": "it  doesn’t cost as much as the paper it was written on",
+                    "translation": "they have good memory",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "érték",
+            "foreignWord": "a cégemnél",
             "translations": [
                 {
-                    "translation": "value",
+                    "translation": "at my company",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "értékes",
+            "foreignWord": "idegen nyelv",
             "translations": [
                 {
-                    "translation": "valuable",
+                    "translation": "foreign language",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "Mongol Birodalom",
+            "foreignWord": "szépirodalom",
             "translations": [
                 {
-                    "translation": "Mongolian Empire",
+                    "translation": "literature",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "övé az egész hatalom",
+            "foreignWord": "üzenetet kap",
             "translations": [
                 {
-                    "translation": "the whole power is his",
+                    "translation": "to get a message",
                     "transcript": []
                 }
             ]
         },
         {
-            "foreignWord": "jelentős",
+            "foreignWord": "nyelvtan",
             "translations": [
                 {
-                    "translation": "significant, important",
-                    "transcript": []
-                }
-            ]
-        },
-        {
-            "foreignWord": "ameddig, amíg",
-            "translations": [
-                {
-                    "translation": "until",
-                    "transcript": []
-                }
-            ]
-        },
-        {
-            "foreignWord": "személyi kultusz",
-            "translations": [
-                {
-                    "translation": "personality cult",
+                    "translation": "grammar",
                     "transcript": []
                 }
             ]

@@ -81,10 +81,16 @@ extension DictionaryVC {
             if dictionary.words.count > 0 {
                 let newWords = List<Word>()
                 for word in dictionary.words {
-                    let newWord = Word(foreignWord: word.foreignWord, translation: word.translation)
-                    if let transcript = word.transcript {
-                        newWord.transcript = transcript
+                    let newWord = Word(foreignWord: word.foreignWord)
+                    for translation in word.translations {
+                        
+                        let wordTranslation = Translation(translation: translation.translation)
+                        for transcript in translation.transcript {
+                            wordTranslation.transcript.append(transcript)
+                        }
+                        newWord.translations.append(wordTranslation)
                     }
+                    
                     newWords.append(newWord)
                 }
                 newDict.words = newWords

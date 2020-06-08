@@ -26,12 +26,20 @@ class WordsDictionaryFixture: Decodable {
 
 class WordFixture: Decodable {
     var foreignWord: String
-    var transcript: String?
-    var translation: String
+    
+    var translations: [TranslationFixture] = []
     var learned: Bool? = false
     
-    init(foreignWord: String, translation: String) {
+    init(foreignWord: String) {
         self.foreignWord = foreignWord
+    }
+}
+
+class TranslationFixture: Decodable {
+    var transcript: [String] = []
+    var translation: String
+    
+    init(translation: String) {
         self.translation = translation
     }
 }

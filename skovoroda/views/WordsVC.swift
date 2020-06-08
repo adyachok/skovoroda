@@ -48,14 +48,18 @@ extension WordsVC: UITableViewDataSource {
         if let wordsDictionary = wordsDictionary {
             let word = wordsDictionary.words[indexPath.row]
             cell.foreignWord.text = word.foreignWord
-            cell.transcript.text = word.transcript ?? ""
-            cell.translation.text = word.translation
+            cell.translations = word.translations
             if let status = word.status, status.state == .learned {
                 cell.backgroundColor = K.learnedWordColor
+                cell.translationTable.backgroundColor = K.learnedWordColor
             } else {
                 cell.backgroundColor = K.readyForLearningColor
+                cell.translationTable.backgroundColor = K.readyForLearningColor
             }
         }
+        cell.layoutSubviews()
+
+        cell.layoutIfNeeded()
         
         return cell
     }
