@@ -100,6 +100,8 @@ extension WordsVC: UITableViewDelegate {
                 let realm = try! Realm()
                 try! realm.write {
                     word.status = MemoizationStatus(state: .learned)
+                    // Update progress. Simple way. Will use in statistics.
+                    dailyDictionary.updateProgress()
                 }
                 setProgress()
             }

@@ -20,7 +20,7 @@ class DictionaryVC: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         checkAndLoadDictionariesFixtures()
         _ = try! Realm()
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        // print(Realm.Configuration.defaultConfiguration.fileURL)
     }    
 
     // MARK: - Table view data source

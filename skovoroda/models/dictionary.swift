@@ -100,6 +100,7 @@ class Translation: Object {
 class DailyDictionary: Object {
     @objc dynamic var wordsDictionary: WordsDictionary? = nil
     var selectedWords = List<Word>()
+    @objc dynamic var progress: Float = 0
     @objc dynamic var creationDate: Date = Date()
     
     convenience init(wordsDictionary: WordsDictionary) {
@@ -173,5 +174,13 @@ extension DailyDictionary {
             {return false}
             
         }.count
+    }
+    
+    func updateProgress() {
+        // Should not be calculated property, because one word can be learned in multiple
+        // daily dictionaries, so all will point on the same word. This will make traking
+        // progress impossible.
+        // Method should be triggered every time a word is learned, and object shuld be saved.
+        self.progress = Float(self.getLearnedWordsCount()) / Float(self.selectedWords.count)
     }
 }
