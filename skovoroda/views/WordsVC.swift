@@ -17,7 +17,15 @@ class WordsVC: UIViewController, WordsDictionaryContainer {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var progressLabel: UILabel!
     var wordsDictionary: WordsDictionary?
+    // I think the most effective way is to learn word
+    // by word not jomping to different parts of daily
+    // dictionary.
     var currentlyLearnedWordIndex: IndexPath?
+    let todayIWillLearnThisWordsQuantity = 10
+    // Every day new DailyDictionary will be created
+    // if user follows dictionary link and not learned
+    // words are present.
+    var dailyDictionary: DailyDictionary?
     
     
     override func viewDidLoad() {
@@ -26,7 +34,7 @@ class WordsVC: UIViewController, WordsDictionaryContainer {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         navigationController?.navigationBar.prefersLargeTitles = true
-        setProgress()
+        self.prepareDailyDictionary()
     }
 }
 
@@ -36,8 +44,8 @@ class WordsVC: UIViewController, WordsDictionaryContainer {
 
 extension WordsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let wordsDictionary = wordsDictionary {
-            return wordsDictionary.words.count
+        if let dailyDictionary = dailyDictionary {
+            return dailyDictionary.selectedWords.count
         }
         return 0
     }
@@ -45,8 +53,8 @@ extension WordsVC: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dictionaryCell", for: indexPath) as! WordCell
-        if let wordsDictionary = wordsDictionary {
-            let word = wordsDictionary.words[indexPath.row]
+        if let dailyDictionary = dailyDictionary {
+            let word = dailyDictionary.selectedWords[indexPath.row]
             cell.foreignWord.text = word.foreignWord
             cell.translation.text = self.prepareTranslation(word.translations)
             if word.partOfSpeech != "" {
@@ -86,8 +94,8 @@ extension WordsVC: UITableViewDataSource {
 
 extension WordsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let wordsDictionary = wordsDictionary {
-            let word = wordsDictionary.words[indexPath.row]
+        if let dailyDictionary = dailyDictionary {
+            let word = dailyDictionary.selectedWords[indexPath.row]
             if let status = word.status, status.state == .readyForLearning {
                 let realm = try! Realm()
                 try! realm.write {
@@ -101,10 +109,35 @@ extension WordsVC: UITableViewDelegate {
     }
     
     private func setProgress() {
-        if let wordsDictionary = wordsDictionary {
-            let progress = Float(wordsDictionary.getLearnedWordsCount()) / Float(wordsDictionary.words.count)
+        if let dailyDictionary = dailyDictionary {
+            let progress = Float(dailyDictionary.getLearnedWordsCount()) / Float(dailyDictionary.selectedWords.count)
             progressBar.progress = progress
             progressLabel.text = String(Int(progress * 100))
         }
     }
+}
+
+
+// MARK: Prepare daily dictionary
+extension WordsVC {
+    func prepareDailyDictionary() {
+        if let wordsDictionary = self.wordsDictionary {
+            let wordsDictionaryRef = ThreadSafeReference(to: wordsDictionary)
+            // FIXME: Fails on Realm obj accesed from diff thread
+            // Possible issue: https://stackoverflow.com/questions/41781775/realm-accessed-from-incorrect-thread-again/41783688
+//            DispatchQueue.global().async {
+                guard let dailyDict = DailyDictionary.getOrCreate(for: wordsDictionaryRef, words: self.todayIWillLearnThisWordsQuantity) else {
+                    return
+                }
+//                DispatchQueue.main.async {
+                    self.dailyDictionary = dailyDict
+                    self.tableView.reloadData()
+                    self.setProgress()
+//                }
+//            }
+            
+        }
+        
+    }
+    
 }

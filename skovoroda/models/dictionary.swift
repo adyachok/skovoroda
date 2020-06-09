@@ -96,3 +96,82 @@ class Translation: Object {
         self.translation = translation
     }
 }
+
+class DailyDictionary: Object {
+    @objc dynamic var wordsDictionary: WordsDictionary? = nil
+    var selectedWords = List<Word>()
+    @objc dynamic var creationDate: Date = Date()
+    
+    convenience init(wordsDictionary: WordsDictionary) {
+        self.init()
+        self.wordsDictionary = wordsDictionary
+    }
+    
+    convenience init(wordsDictionary: WordsDictionary, selectedWords: [Word]) {
+        self.init()
+        self.wordsDictionary = wordsDictionary
+        for word in selectedWords {
+            self.selectedWords.append(word)
+        }
+    }
+}
+
+extension DailyDictionary {
+    // TODO: move this extension's logic to repository
+    static func build(for wordsDictionary: WordsDictionary, words number: Int) -> DailyDictionary {
+        let states = [MemoizationStatus.State.readyForLearning, MemoizationStatus.State.inLearning]
+        let selectedWordsList = wordsDictionary.words.filter{states.contains($0.status!.state)}.prefix(through: number)
+        let selectedWords = Array(selectedWordsList)
+        
+        let dailyDictionary = DailyDictionary(wordsDictionary: wordsDictionary, selectedWords: selectedWords)
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(dailyDictionary)
+        }
+        return dailyDictionary
+    }
+    
+    static func build(for wordsDictionaryRef: ThreadSafeReference<WordsDictionary>, words number: Int) -> DailyDictionary? {
+        let realm = try! Realm()
+        guard let wordsDictionary = realm.resolve(wordsDictionaryRef)  else {
+            print("Cannot resolve dictionary!")
+            return nil
+        }
+        let states = [MemoizationStatus.State.readyForLearning, MemoizationStatus.State.inLearning]
+        let selectedWordsList = wordsDictionary.words.filter{states.contains($0.status!.state)}.prefix(through: number)
+        let selectedWords = Array(selectedWordsList)
+        let dailyDictionary = DailyDictionary(wordsDictionary: wordsDictionary, selectedWords: selectedWords)
+        try! realm.write {
+            realm.add(dailyDictionary)
+        }
+        return dailyDictionary
+    }
+    
+    static func getOrCreate(for wordsDictionaryRef: ThreadSafeReference<WordsDictionary>, words number: Int) -> DailyDictionary? {
+        let realm = try! Realm()
+        guard let wordsDictionary = realm.resolve(wordsDictionaryRef)  else {
+            print("Cannot resolve dictionary!")
+            return nil
+        }
+        let todayStart = Calendar.current.startOfDay(for: Date())
+        let todayEnd: Date = {
+          let components = DateComponents(day: 1, second: -1)
+          return Calendar.current.date(byAdding: components, to: todayStart)!
+        }()
+        if let dailyDict = realm.objects(DailyDictionary.self).filter("creationDate BETWEEN %@ AND wordsDictionary = %@ ", [todayStart, todayEnd], wordsDictionary).first {
+            return dailyDict
+        } else {
+//            print("Any daily dictionary found!")
+            return DailyDictionary.build(for: wordsDictionary, words: number)
+        }
+    }
+    
+    func getLearnedWordsCount() -> Int {
+        return selectedWords.filter{
+            if let status = $0.status, status.state == .learned
+            {return true} else
+            {return false}
+            
+        }.count
+    }
+}
