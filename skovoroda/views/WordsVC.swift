@@ -112,9 +112,14 @@ extension WordsVC: UITableViewDelegate {
     
     private func setProgress() {
         if let dailyDictionary = dailyDictionary {
-            let progress = Float(dailyDictionary.getLearnedWordsCount()) / Float(dailyDictionary.selectedWords.count)
-            progressBar.progress = progress
-            progressLabel.text = String(Int(progress * 100))
+            print(dailyDictionary.getLearnedWordsCount())
+            print(Float(dailyDictionary.selectedWords.count))
+            let selectedWordsCount = dailyDictionary.selectedWords.count
+            if selectedWordsCount > 0 {
+                let progress = Float(dailyDictionary.getLearnedWordsCount()) / Float(selectedWordsCount)
+                progressBar.progress = progress
+                progressLabel.text = String(Int(progress * 100))
+            }
         }
     }
 }
@@ -132,6 +137,7 @@ extension WordsVC {
                     return
                 }
 //                DispatchQueue.main.async {
+            print(dailyDict.selectedWords.count)
                     self.dailyDictionary = dailyDict
                     self.tableView.reloadData()
                     self.setProgress()

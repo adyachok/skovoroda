@@ -121,8 +121,9 @@ extension DailyDictionary {
     // TODO: move this extension's logic to repository
     static func build(for wordsDictionary: WordsDictionary, words number: Int) -> DailyDictionary {
         let states = [MemoizationStatus.State.readyForLearning, MemoizationStatus.State.inLearning]
-        let selectedWordsList = wordsDictionary.words.filter{states.contains($0.status!.state)}.prefix(through: number)
-        let selectedWords = Array(selectedWordsList)
+        let selectedWordsList = wordsDictionary.words.filter{states.contains($0.status!.state)}
+
+        let selectedWords = Array(selectedWordsList.prefix(10))
         
         let dailyDictionary = DailyDictionary(wordsDictionary: wordsDictionary, selectedWords: selectedWords)
         let realm = try! Realm()
@@ -138,14 +139,7 @@ extension DailyDictionary {
             print("Cannot resolve dictionary!")
             return nil
         }
-        let states = [MemoizationStatus.State.readyForLearning, MemoizationStatus.State.inLearning]
-        let selectedWordsList = wordsDictionary.words.filter{states.contains($0.status!.state)}.prefix(through: number)
-        let selectedWords = Array(selectedWordsList)
-        let dailyDictionary = DailyDictionary(wordsDictionary: wordsDictionary, selectedWords: selectedWords)
-        try! realm.write {
-            realm.add(dailyDictionary)
-        }
-        return dailyDictionary
+        return build(for: wordsDictionary, words: number)
     }
     
     static func getOrCreate(for wordsDictionaryRef: ThreadSafeReference<WordsDictionary>, words number: Int) -> DailyDictionary? {
@@ -154,15 +148,13 @@ extension DailyDictionary {
             print("Cannot resolve dictionary!")
             return nil
         }
-        let todayStart = Calendar.current.startOfDay(for: Date())
-        let todayEnd: Date = {
-          let components = DateComponents(day: 1, second: -1)
-          return Calendar.current.date(byAdding: components, to: todayStart)!
-        }()
-        if let dailyDict = realm.objects(DailyDictionary.self).filter("creationDate BETWEEN %@ AND wordsDictionary = %@ ", [todayStart, todayEnd], wordsDictionary).first {
+        let todaysTimeInterval = getTodayStartEndTimeInterval()
+        if let dailyDict = realm.objects(DailyDictionary.self)
+            .filter("creationDate BETWEEN %@ AND wordsDictionary = %@ ",
+                    [todaysTimeInterval.startTime, todaysTimeInterval.endTime],
+                    wordsDictionary).first {
             return dailyDict
         } else {
-//            print("Any daily dictionary found!")
             return DailyDictionary.build(for: wordsDictionary, words: number)
         }
     }
@@ -182,5 +174,14 @@ extension DailyDictionary {
         // progress impossible.
         // Method should be triggered every time a word is learned, and object shuld be saved.
         self.progress = Float(self.getLearnedWordsCount()) / Float(self.selectedWords.count)
+    }
+    
+    static func getTodayStartEndTimeInterval() -> (startTime: Date, endTime: Date) {
+        let todayStart = Calendar.current.startOfDay(for: Date())
+        let todayEnd: Date = {
+          let components = DateComponents(day: 1, second: -1)
+          return Calendar.current.date(byAdding: components, to: todayStart)!
+        }()
+        return (startTime: todayStart, endTime: todayEnd)
     }
 }

@@ -20,8 +20,12 @@ class DictionaryVC: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         checkAndLoadDictionariesFixtures()
         _ = try! Realm()
-        // print(Realm.Configuration.defaultConfiguration.fileURL)
-    }    
+//        print(Realm.Configuration.defaultConfiguration.fileURL)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
@@ -44,6 +48,7 @@ class DictionaryVC: UITableViewController {
         cell.flag.image = getDictionaryFlag(language: selectedDictionary.language)
         cell.desc.text = selectedDictionary.desc
         cell.dateCreated.text = selectedDictionary.dateCreated
+        cell.dictionaryProgress = Float(selectedDictionary.getLearnedWordsCount()) / Float(selectedDictionary.words.count) * 100
         return cell
     }
     
@@ -59,6 +64,10 @@ class DictionaryVC: UITableViewController {
             }
             
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }
