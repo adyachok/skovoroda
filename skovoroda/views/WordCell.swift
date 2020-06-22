@@ -14,6 +14,7 @@ class WordCell: UITableViewCell {
     @IBOutlet weak var foreignWord: UILabel!
     @IBOutlet var translation: UILabel!
     @IBOutlet var partOfSpeech: UILabel!
+    @IBOutlet var usage: UILabel!
     
     
     override func awakeFromNib() {

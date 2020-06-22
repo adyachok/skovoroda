@@ -48,6 +48,7 @@ class Word: Object{
     @objc dynamic var foreignWord: String = ""
     @objc dynamic var partOfSpeech: String = ""
     var translations = List<Translation>()
+    var usage = List<String>()
     // SOLUTION FOUND https://santoshm.com.np/2019/11/19/swift-didset-and-willset-on-properties-in-realm-doesnt-work/
     @objc private dynamic var _status: MemoizationStatus?
     var status: MemoizationStatus? {
@@ -89,6 +90,7 @@ class MemoizationStatus: Object {
 
 class Translation: Object {
     @objc dynamic var translation: String = ""
+    @objc dynamic var partOfSpeech: String = ""
     var transcript = List<String>()
     
     convenience init(translation: String) {

@@ -100,7 +100,18 @@ extension DictionaryVC {
                         for transcript in translation.transcript {
                             wordTranslation.transcript.append(transcript)
                         }
+                        if let partOfSpeech = translation.partOfSpeech {
+                            wordTranslation.partOfSpeech = partOfSpeech
+                        }
                         newWord.translations.append(wordTranslation)
+                        if let usage = word.usage {
+                            if usage.count > 0 {
+                                for sentence in usage {
+                                    newWord.usage.append(sentence)
+                                }
+                            }
+                        }
+                        
                     }
                     
                     newWords.append(newWord)

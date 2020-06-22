@@ -62,6 +62,11 @@ extension WordsVC: UITableViewDataSource {
             } else {
                 cell.partOfSpeech.text = ""
             }
+            if word.usage.count > 0 {
+                cell.usage.text = word.usage.joined(separator: "\n\n")
+            } else {
+                cell.usage.text = ""
+            }
             if let status = word.status, status.state == .learned {
                 cell.backgroundColor = K.learnedWordColor
             } else {
@@ -112,8 +117,6 @@ extension WordsVC: UITableViewDelegate {
     
     private func setProgress() {
         if let dailyDictionary = dailyDictionary {
-            print(dailyDictionary.getLearnedWordsCount())
-            print(Float(dailyDictionary.selectedWords.count))
             let selectedWordsCount = dailyDictionary.selectedWords.count
             if selectedWordsCount > 0 {
                 let progress = Float(dailyDictionary.getLearnedWordsCount()) / Float(selectedWordsCount)

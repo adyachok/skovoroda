@@ -23,6 +23,10 @@
 		013C90AF245CD7CA009264D9 /* fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 013C90AE245CD7CA009264D9 /* fixtures */; };
 		01488757246C5092007684BC /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01488756246C5092007684BC /* WordCell.swift */; };
 		01488759246C5409007684BC /* DictionaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01488758246C5409007684BC /* DictionaryCell.swift */; };
+		016EA1B924A0D2A3000568F4 /* DictionaryCardsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016EA1B824A0D2A3000568F4 /* DictionaryCardsCollectionVC.swift */; };
+		016EA1BC24A0D51C000568F4 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016EA1BB24A0D51C000568F4 /* CardCell.swift */; };
+		016EA1BE24A0E5B4000568F4 /* CardAnswersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016EA1BD24A0E5B4000568F4 /* CardAnswersCell.swift */; };
+		016EA1C024A12B37000568F4 /* GameDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016EA1BF24A12B37000568F4 /* GameDictionary.swift */; };
 		75C73DED8D374CA93A57B220 /* Pods_skovoroda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B439A8890D69EEBB230F047 /* Pods_skovoroda.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,10 @@
 		013C90AE245CD7CA009264D9 /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fixtures; sourceTree = "<group>"; };
 		01488756246C5092007684BC /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		01488758246C5409007684BC /* DictionaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryCell.swift; sourceTree = "<group>"; };
+		016EA1B824A0D2A3000568F4 /* DictionaryCardsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryCardsCollectionVC.swift; sourceTree = "<group>"; };
+		016EA1BB24A0D51C000568F4 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		016EA1BD24A0E5B4000568F4 /* CardAnswersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAnswersCell.swift; sourceTree = "<group>"; };
+		016EA1BF24A12B37000568F4 /* GameDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDictionary.swift; sourceTree = "<group>"; };
 		1B439A8890D69EEBB230F047 /* Pods_skovoroda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_skovoroda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA3DD126B4C8C6D5C961352 /* Pods-skovoroda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skovoroda.release.xcconfig"; path = "Target Support Files/Pods-skovoroda/Pods-skovoroda.release.xcconfig"; sourceTree = "<group>"; };
 		A2C4598EA198791779F74980 /* Pods-skovoroda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skovoroda.debug.xcconfig"; path = "Target Support Files/Pods-skovoroda/Pods-skovoroda.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,10 +82,12 @@
 		0138881D245DA36200D7C685 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				013C9093245C83EA009264D9 /* WordsVC.swift */,
-				0138881A245D970E00D7C685 /* DictionaryVC.swift */,
 				01488756246C5092007684BC /* WordCell.swift */,
 				01488758246C5409007684BC /* DictionaryCell.swift */,
+				013C9095245C83EA009264D9 /* Main.storyboard */,
+				013C909A245C83EC009264D9 /* LaunchScreen.storyboard */,
+				016EA1BB24A0D51C000568F4 /* CardCell.swift */,
+				016EA1BD24A0E5B4000568F4 /* CardAnswersCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -103,14 +113,13 @@
 		013C908E245C83EA009264D9 /* skovoroda */ = {
 			isa = PBXGroup;
 			children = (
+				016EA1BA24A0D4D5000568F4 /* controllers */,
 				0138881D245DA36200D7C685 /* views */,
 				013C90AE245CD7CA009264D9 /* fixtures */,
 				013C90A3245C8407009264D9 /* models */,
 				013C908F245C83EA009264D9 /* AppDelegate.swift */,
 				013C9091245C83EA009264D9 /* SceneDelegate.swift */,
-				013C9095245C83EA009264D9 /* Main.storyboard */,
 				013C9098245C83EC009264D9 /* Assets.xcassets */,
-				013C909A245C83EC009264D9 /* LaunchScreen.storyboard */,
 				013C909D245C83EC009264D9 /* Info.plist */,
 				01087A08247D076A00F79E7C /* utils */,
 				01087A09247D114800F79E7C /* config.swift */,
@@ -124,8 +133,19 @@
 				013C90A4245C842E009264D9 /* dictionary.swift */,
 				01388821245DB11B00D7C685 /* protocols.swift */,
 				01087A06247D065400F79E7C /* language.swift */,
+				016EA1BF24A12B37000568F4 /* GameDictionary.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		016EA1BA24A0D4D5000568F4 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				013C9093245C83EA009264D9 /* WordsVC.swift */,
+				0138881A245D970E00D7C685 /* DictionaryVC.swift */,
+				016EA1B824A0D2A3000568F4 /* DictionaryCardsCollectionVC.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 		1032B300E851AAB12101F0AC /* Pods */ = {
@@ -265,14 +285,18 @@
 				01087A07247D065400F79E7C /* language.swift in Sources */,
 				01488757246C5092007684BC /* WordCell.swift in Sources */,
 				013C90A5245C842E009264D9 /* dictionary.swift in Sources */,
+				016EA1B924A0D2A3000568F4 /* DictionaryCardsCollectionVC.swift in Sources */,
 				01087A05247D054300F79E7C /* tools.swift in Sources */,
 				013C9090245C83EA009264D9 /* AppDelegate.swift in Sources */,
+				016EA1BC24A0D51C000568F4 /* CardCell.swift in Sources */,
+				016EA1BE24A0E5B4000568F4 /* CardAnswersCell.swift in Sources */,
 				01388822245DB11B00D7C685 /* protocols.swift in Sources */,
 				01488759246C5409007684BC /* DictionaryCell.swift in Sources */,
 				0138881B245D970E00D7C685 /* DictionaryVC.swift in Sources */,
 				01087A0A247D114800F79E7C /* config.swift in Sources */,
 				013C9092245C83EA009264D9 /* SceneDelegate.swift in Sources */,
 				01087A03247D045300F79E7C /* importers.swift in Sources */,
+				016EA1C024A12B37000568F4 /* GameDictionary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

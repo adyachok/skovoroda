@@ -29,6 +29,7 @@ class WordFixture: Decodable {
     var partOfSpeech: String?
     
     var translations: [TranslationFixture] = []
+    var usage: [String]? = []
     var learned: Bool? = false
     
     init(foreignWord: String) {
@@ -39,6 +40,7 @@ class WordFixture: Decodable {
 class TranslationFixture: Decodable {
     var transcript: [String] = []
     var translation: String
+    var partOfSpeech: String?
     
     init(translation: String) {
         self.translation = translation
@@ -60,6 +62,7 @@ extension WordsDictionaryFixture {
                 } catch {
                      // handle error
                   print("Error occured! \(error.localizedDescription)")
+                    print(error)
                 }
             }
             
