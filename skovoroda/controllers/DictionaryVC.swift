@@ -17,7 +17,7 @@ class DictionaryVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Dictionaries"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .never
         checkAndLoadDictionariesFixtures()
         _ = try! Realm()
 //        print(Realm.Configuration.defaultConfiguration.fileURL)
@@ -94,6 +94,9 @@ extension DictionaryVC {
                     if let partOfSpeech = word.partOfSpeech {
                         newWord.partOfSpeech = partOfSpeech
                     }
+                    if let testString = word.test {
+                        newWord.test = testString
+                    }
                     for translation in word.translations {
                         
                         let wordTranslation = Translation(translation: translation.translation)
@@ -104,14 +107,13 @@ extension DictionaryVC {
                             wordTranslation.partOfSpeech = partOfSpeech
                         }
                         newWord.translations.append(wordTranslation)
-                        if let usage = word.usage {
-                            if usage.count > 0 {
-                                for sentence in usage {
-                                    newWord.usage.append(sentence)
-                                }
+                    }
+                    if let usage = word.usage {
+                        if usage.count > 0 {
+                            for sentence in usage {
+                                newWord.usage.append(sentence)
                             }
                         }
-                        
                     }
                     
                     newWords.append(newWord)

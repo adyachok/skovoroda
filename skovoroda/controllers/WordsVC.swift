@@ -21,7 +21,6 @@ class WordsVC: UIViewController, WordsDictionaryContainer {
     // by word not jomping to different parts of daily
     // dictionary.
     var currentlyLearnedWordIndex: IndexPath?
-    let todayIWillLearnThisWordsQuantity = 10
     // Every day new DailyDictionary will be created
     // if user follows dictionary link and not learned
     // words are present.
@@ -33,8 +32,15 @@ class WordsVC: UIViewController, WordsDictionaryContainer {
         self.title = wordsDictionary?.name
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .never
         self.prepareDailyDictionary()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "playCardsSegue" {
+            let controller = segue.destination as? CardsGameVC
+            controller?.wordsDictionary = self.wordsDictionary
+        }
     }
 }
 
@@ -56,7 +62,7 @@ extension WordsVC: UITableViewDataSource {
         if let dailyDictionary = dailyDictionary {
             let word = dailyDictionary.selectedWords[indexPath.row]
             cell.foreignWord.text = word.foreignWord
-            cell.translation.text = self.prepareTranslation(word.translations)
+            cell.translation.attributedText = self.prepareTranslation(word.translations)
             if word.partOfSpeech != "" {
                 cell.partOfSpeech.text = word.partOfSpeech
             } else {
@@ -77,19 +83,25 @@ extension WordsVC: UITableViewDataSource {
         return cell
     }
     
-    func prepareTranslation(_ translations: List<Translation>) -> String {
-        var translationStrings:[String] = []
+    func prepareTranslation(_ translations: List<Translation>) -> NSMutableAttributedString {
+        var translationStrings:[NSMutableAttributedString] = []
         for wordTranslation in translations {
-            var translationString = ""
+            let translationString = NSMutableAttributedString(string: "")
             if wordTranslation.transcript.count != 0 {
                 for transcript in wordTranslation.transcript {
-                    translationString += "[\(transcript)]\n"
+//                    translationString += "\t[\(transcript)]\n"
+                    let transcript  = NSMutableAttributedString(string: "[\(transcript)]\n", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13)])
+                    translationString.append(transcript)
                 }
             }
-            translationString += "\n\t\(wordTranslation.translation)\n\n"
+            translationString.append(NSMutableAttributedString(string: "\(wordTranslation.translation)\n\n"))
             translationStrings.append(translationString)
         }
-        return translationStrings.joined(separator: "")
+        let translation = NSMutableAttributedString(string: "")
+        for attrString in translationStrings {
+            translation.append(attrString)
+        }
+        return translation
     }
 }
 
@@ -136,11 +148,10 @@ extension WordsVC {
             // FIXME: Fails on Realm obj accesed from diff thread
             // Possible issue: https://stackoverflow.com/questions/41781775/realm-accessed-from-incorrect-thread-again/41783688
 //            DispatchQueue.global().async {
-                guard let dailyDict = DailyDictionary.getOrCreate(for: wordsDictionaryRef, words: self.todayIWillLearnThisWordsQuantity) else {
+            guard let dailyDict = DailyDictionary.getOrCreate(for: wordsDictionaryRef, words: K.dailyDictionaryWordsQuantity) else {
                     return
                 }
 //                DispatchQueue.main.async {
-            print(dailyDict.selectedWords.count)
                     self.dailyDictionary = dailyDict
                     self.tableView.reloadData()
                     self.setProgress()

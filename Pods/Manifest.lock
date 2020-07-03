@@ -1,5 +1,4 @@
 PODS:
-  - DLRadioButton (1.4.12)
   - Realm (5.0.0):
     - Realm/Headers (= 5.0.0)
   - Realm/Headers (5.0.0)
@@ -8,23 +7,20 @@ PODS:
   - UICircularProgressRing (6.5.0)
 
 DEPENDENCIES:
-  - DLRadioButton
   - RealmSwift
   - UICircularProgressRing
 
 SPEC REPOS:
   trunk:
-    - DLRadioButton
     - Realm
     - RealmSwift
     - UICircularProgressRing
 
 SPEC CHECKSUMS:
-  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   Realm: 76066d333de26f97e9caedaa85ee3ff4a62ca265
   RealmSwift: c1bdff09b422569dc6881410d9ccf712bcdb79b0
   UICircularProgressRing: e6852e8f88e296cbbbe2720cccb55241acda6708
 
-PODFILE CHECKSUM: 99ada3f7820c385f2d13ce8a54139a6aa522c79a
+PODFILE CHECKSUM: a30700cf7dd023326a9a981e4db8f61b7cd3a37d
 
 COCOAPODS: 1.9.1

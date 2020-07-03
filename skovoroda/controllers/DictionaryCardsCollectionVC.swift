@@ -12,12 +12,20 @@ import RealmSwift
 private let reuseIdentifier = "CardCell"
 
 class DictionaryCardsCollectionVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    var wordsDictionary: WordsDictionary?  {
+        didSet {
+            if let wd = wordsDictionary {
+                gameDictionary = GameDictionary.build(for: wd)
+                collectionView.reloadData()
+            }
+        }
+    }
+    var gameDictionary: GameDictionary?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
+        collectionView.isPagingEnabled = true
     }
 
 
@@ -27,11 +35,21 @@ class DictionaryCardsCollectionVC: UICollectionViewController, UICollectionViewD
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        if let gd = gameDictionary {
+            return gd.words.count
+        }
+        return 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CardCell
+        if let gameDictionary = self.gameDictionary {
+            let word = gameDictionary.words[indexPath.row]
+            cell.foreignWordLabel.text = word.foreignWord
+            cell.foreignWord = word
+        } else {
+            print("No game dictionary found!")
+        }
         return cell
     }
     

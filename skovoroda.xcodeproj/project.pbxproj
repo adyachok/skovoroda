@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		01087A03247D045300F79E7C /* importers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01087A02247D045300F79E7C /* importers.swift */; };
 		01087A05247D054300F79E7C /* tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01087A04247D054300F79E7C /* tools.swift */; };
-		01087A07247D065400F79E7C /* language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01087A06247D065400F79E7C /* language.swift */; };
+		01087A07247D065400F79E7C /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01087A06247D065400F79E7C /* Language.swift */; };
 		01087A0A247D114800F79E7C /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01087A09247D114800F79E7C /* config.swift */; };
 		0138881B245D970E00D7C685 /* DictionaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0138881A245D970E00D7C685 /* DictionaryVC.swift */; };
-		01388822245DB11B00D7C685 /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01388821245DB11B00D7C685 /* protocols.swift */; };
+		01388822245DB11B00D7C685 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01388821245DB11B00D7C685 /* Protocols.swift */; };
 		013C9090245C83EA009264D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C908F245C83EA009264D9 /* AppDelegate.swift */; };
 		013C9092245C83EA009264D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C9091245C83EA009264D9 /* SceneDelegate.swift */; };
 		013C9094245C83EA009264D9 /* WordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C9093245C83EA009264D9 /* WordsVC.swift */; };
 		013C9097245C83EA009264D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C9095245C83EA009264D9 /* Main.storyboard */; };
 		013C9099245C83EC009264D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013C9098245C83EC009264D9 /* Assets.xcassets */; };
 		013C909C245C83EC009264D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C909A245C83EC009264D9 /* LaunchScreen.storyboard */; };
-		013C90A5245C842E009264D9 /* dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C90A4245C842E009264D9 /* dictionary.swift */; };
+		013C90A5245C842E009264D9 /* WordsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C90A4245C842E009264D9 /* WordsDictionary.swift */; };
 		013C90AF245CD7CA009264D9 /* fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 013C90AE245CD7CA009264D9 /* fixtures */; };
 		01488757246C5092007684BC /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01488756246C5092007684BC /* WordCell.swift */; };
 		01488759246C5409007684BC /* DictionaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01488758246C5409007684BC /* DictionaryCell.swift */; };
@@ -27,16 +27,18 @@
 		016EA1BC24A0D51C000568F4 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016EA1BB24A0D51C000568F4 /* CardCell.swift */; };
 		016EA1BE24A0E5B4000568F4 /* CardAnswersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016EA1BD24A0E5B4000568F4 /* CardAnswersCell.swift */; };
 		016EA1C024A12B37000568F4 /* GameDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016EA1BF24A12B37000568F4 /* GameDictionary.swift */; };
+		016EA1C224A21960000568F4 /* DailyDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016EA1C124A21960000568F4 /* DailyDictionary.swift */; };
+		019D3B8A24AB810C00168515 /* CardsGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D3B8924AB810C00168515 /* CardsGameVC.swift */; };
 		75C73DED8D374CA93A57B220 /* Pods_skovoroda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B439A8890D69EEBB230F047 /* Pods_skovoroda.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01087A02247D045300F79E7C /* importers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = importers.swift; sourceTree = "<group>"; };
 		01087A04247D054300F79E7C /* tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tools.swift; sourceTree = "<group>"; };
-		01087A06247D065400F79E7C /* language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = language.swift; sourceTree = "<group>"; };
+		01087A06247D065400F79E7C /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		01087A09247D114800F79E7C /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		0138881A245D970E00D7C685 /* DictionaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryVC.swift; sourceTree = "<group>"; };
-		01388821245DB11B00D7C685 /* protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
+		01388821245DB11B00D7C685 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		013C908C245C83EA009264D9 /* skovoroda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skovoroda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013C908F245C83EA009264D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		013C9091245C83EA009264D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +47,7 @@
 		013C9098245C83EC009264D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		013C909B245C83EC009264D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		013C909D245C83EC009264D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		013C90A4245C842E009264D9 /* dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dictionary.swift; sourceTree = "<group>"; };
+		013C90A4245C842E009264D9 /* WordsDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsDictionary.swift; sourceTree = "<group>"; };
 		013C90AE245CD7CA009264D9 /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fixtures; sourceTree = "<group>"; };
 		01488756246C5092007684BC /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		01488758246C5409007684BC /* DictionaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryCell.swift; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		016EA1BB24A0D51C000568F4 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		016EA1BD24A0E5B4000568F4 /* CardAnswersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAnswersCell.swift; sourceTree = "<group>"; };
 		016EA1BF24A12B37000568F4 /* GameDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDictionary.swift; sourceTree = "<group>"; };
+		016EA1C124A21960000568F4 /* DailyDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDictionary.swift; sourceTree = "<group>"; };
+		019D3B8924AB810C00168515 /* CardsGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsGameVC.swift; sourceTree = "<group>"; };
 		1B439A8890D69EEBB230F047 /* Pods_skovoroda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_skovoroda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA3DD126B4C8C6D5C961352 /* Pods-skovoroda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skovoroda.release.xcconfig"; path = "Target Support Files/Pods-skovoroda/Pods-skovoroda.release.xcconfig"; sourceTree = "<group>"; };
 		A2C4598EA198791779F74980 /* Pods-skovoroda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skovoroda.debug.xcconfig"; path = "Target Support Files/Pods-skovoroda/Pods-skovoroda.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,10 +134,11 @@
 		013C90A3245C8407009264D9 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				013C90A4245C842E009264D9 /* dictionary.swift */,
-				01388821245DB11B00D7C685 /* protocols.swift */,
-				01087A06247D065400F79E7C /* language.swift */,
+				013C90A4245C842E009264D9 /* WordsDictionary.swift */,
+				01388821245DB11B00D7C685 /* Protocols.swift */,
+				01087A06247D065400F79E7C /* Language.swift */,
 				016EA1BF24A12B37000568F4 /* GameDictionary.swift */,
+				016EA1C124A21960000568F4 /* DailyDictionary.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				013C9093245C83EA009264D9 /* WordsVC.swift */,
 				0138881A245D970E00D7C685 /* DictionaryVC.swift */,
 				016EA1B824A0D2A3000568F4 /* DictionaryCardsCollectionVC.swift */,
+				019D3B8924AB810C00168515 /* CardsGameVC.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -281,16 +287,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				019D3B8A24AB810C00168515 /* CardsGameVC.swift in Sources */,
 				013C9094245C83EA009264D9 /* WordsVC.swift in Sources */,
-				01087A07247D065400F79E7C /* language.swift in Sources */,
+				01087A07247D065400F79E7C /* Language.swift in Sources */,
 				01488757246C5092007684BC /* WordCell.swift in Sources */,
-				013C90A5245C842E009264D9 /* dictionary.swift in Sources */,
+				013C90A5245C842E009264D9 /* WordsDictionary.swift in Sources */,
+				016EA1C224A21960000568F4 /* DailyDictionary.swift in Sources */,
 				016EA1B924A0D2A3000568F4 /* DictionaryCardsCollectionVC.swift in Sources */,
 				01087A05247D054300F79E7C /* tools.swift in Sources */,
 				013C9090245C83EA009264D9 /* AppDelegate.swift in Sources */,
 				016EA1BC24A0D51C000568F4 /* CardCell.swift in Sources */,
 				016EA1BE24A0E5B4000568F4 /* CardAnswersCell.swift in Sources */,
-				01388822245DB11B00D7C685 /* protocols.swift in Sources */,
+				01388822245DB11B00D7C685 /* Protocols.swift in Sources */,
 				01488759246C5409007684BC /* DictionaryCell.swift in Sources */,
 				0138881B245D970E00D7C685 /* DictionaryVC.swift in Sources */,
 				01087A0A247D114800F79E7C /* config.swift in Sources */,
@@ -444,6 +452,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AAH368357Z;
 				INFOPLIST_FILE = skovoroda/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,7 +460,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gyacsok.andras.skovoroda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,6 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AAH368357Z;
 				INFOPLIST_FILE = skovoroda/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,7 +480,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gyacsok.andras.skovoroda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
